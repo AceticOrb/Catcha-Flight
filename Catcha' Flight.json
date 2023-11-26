@@ -1985,16 +1985,6 @@
           "actions": [
             {
               "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "timer",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
@@ -2276,7 +2266,7 @@
                   "parameters": [
                     "timer",
                     "=",
-                    "Variable(weight)/2"
+                    "Variable(score)/2"
                   ]
                 },
                 {
