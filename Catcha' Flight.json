@@ -174,7 +174,7 @@
         "alwaysLoaded": false,
         "file": "assets/NewSprite9.png",
         "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite9.png\"}",
         "name": "NewSprite9",
         "smoothed": true,
         "userAdded": false
@@ -286,6 +286,42 @@
         "name": "platform",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "airport(1)2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "airport(1)2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "floor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "floor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "obstacle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "obstacle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "obstacle2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "obstacle2.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -298,15 +334,15 @@
   "variables": [],
   "layouts": [
     {
-      "b": 209,
+      "b": 255,
       "disableInputWhenNotFocused": true,
       "mangledName": "game",
       "name": "game",
-      "r": 209,
+      "r": 137,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 209,
+      "v": 199,
       "uiSettings": {
         "grid": true,
         "gridType": "rectangular",
@@ -317,7 +353,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.15002679255025697,
+        "zoomFactor": 0.46331118245140607,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -416,22 +452,6 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 1,
-          "height": 96,
-          "layer": "",
-          "name": "skyObstacle",
-          "persistentUuid": "a5f19809-4f52-44c5-91d9-4feaeb6950a9",
-          "width": 192,
-          "x": 1920,
-          "y": 384,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "depth": 0,
           "height": 64,
           "layer": "",
@@ -453,7 +473,7 @@
           "layer": "",
           "name": "Obstacle",
           "persistentUuid": "361115d1-6a98-44e8-a422-e7d6bb6f3d19",
-          "width": 320,
+          "width": 160,
           "x": 1920,
           "y": 128,
           "zOrder": 12,
@@ -1193,72 +1213,6 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "skyObstacle",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Tween",
-              "type": "Tween::TweenBehavior"
-            }
-          ],
-          "animations": [
-            {
-              "name": "NewSprite",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "NewSprite4",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
           "name": "throwingObject",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -1695,6 +1649,126 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "floor",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "floor.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 768
+                          },
+                          {
+                            "x": 3840,
+                            "y": 768
+                          },
+                          {
+                            "x": 3840,
+                            "y": 1080
+                          },
+                          {
+                            "x": 0,
+                            "y": 1080
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "obstacleAppearance",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "obstacle2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 6,
+                            "y": 557
+                          },
+                          {
+                            "x": 152,
+                            "y": 557
+                          },
+                          {
+                            "x": 152,
+                            "y": 631
+                          },
+                          {
+                            "x": 6,
+                            "y": 631
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1708,9 +1782,6 @@
           },
           {
             "objectName": "Obstacle"
-          },
-          {
-            "objectName": "skyObstacle"
           },
           {
             "objectName": "throwingObject"
@@ -1735,6 +1806,12 @@
           },
           {
             "objectName": "background1"
+          },
+          {
+            "objectName": "floor"
+          },
+          {
+            "objectName": "obstacleAppearance"
           }
         ]
       },
@@ -2011,7 +2088,7 @@
                 "throwingObject",
                 "character.CenterX() - 96",
                 "character.CenterY() - 96",
-                ""
+                "\"projectile\""
               ]
             },
             {
@@ -2703,7 +2780,7 @@
               "parameters": [
                 "background1",
                 "<=",
-                "-1900"
+                "-1890"
               ]
             },
             {
@@ -2750,7 +2827,7 @@
               "parameters": [
                 "background2",
                 "<=",
-                "-1900"
+                "-1890"
               ]
             },
             {
@@ -2800,6 +2877,58 @@
           "isLightingLayer": false,
           "isLocked": false,
           "name": "background",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "MotionBlur",
+              "name": "Effect3",
+              "doubleParameters": {
+                "kernelSize": 25,
+                "offset": 0,
+                "velocityX": 50,
+                "velocityY": 0
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "RGBSplit",
+              "name": "Effect",
+              "doubleParameters": {
+                "blueX": 10,
+                "blueY": 1,
+                "greenX": 0,
+                "greenY": 0,
+                "redX": -10,
+                "redY": -1
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Brightness",
+              "name": "Effect2",
+              "doubleParameters": {
+                "brightness": 0.8
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "projectile",
           "renderingType": "",
           "visibility": true,
           "cameras": [],
@@ -2862,23 +2991,7 @@
           "renderingType": "",
           "visibility": true,
           "cameras": [],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Light",
-              "doubleParameters": {
-                "elevation": 45,
-                "intensity": 1,
-                "rotation": 0
-              },
-              "stringParameters": {
-                "groundColor": "64;64;64",
-                "skyColor": "255;255;255",
-                "top": "Y-"
-              },
-              "booleanParameters": {}
-            }
-          ]
+          "effects": []
         },
         {
           "ambientLightColorB": 200,
@@ -2894,23 +3007,7 @@
           "renderingType": "",
           "visibility": true,
           "cameras": [],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Light",
-              "doubleParameters": {
-                "elevation": 45,
-                "intensity": 1,
-                "rotation": 0
-              },
-              "stringParameters": {
-                "groundColor": "64;64;64",
-                "skyColor": "255;255;255",
-                "top": "Y-"
-              },
-              "booleanParameters": {}
-            }
-          ]
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
