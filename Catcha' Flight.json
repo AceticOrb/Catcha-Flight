@@ -250,6 +250,42 @@
         "name": "frame000000000000.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "crumpled clothes ground.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "crumpled clothes ground.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "crumpled clothes.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "crumpled clothes.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "airport(1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "airport(1).png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/platform.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "platform",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -281,7 +317,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.3673257545058841,
+        "zoomFactor": 0.15002679255025697,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -395,14 +431,15 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 64,
           "layer": "",
           "name": "throwingObject",
           "persistentUuid": "b6cdb816-b693-4d1b-ad19-12c7526c361d",
-          "width": 0,
-          "x": 1024,
-          "y": -640,
+          "width": 64,
+          "x": 2264,
+          "y": -936,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -428,7 +465,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "UI",
           "name": "score",
           "persistentUuid": "4e0c4ea5-2f63-4e54-adc9-9c3069e6de89",
           "width": 0,
@@ -443,7 +480,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "UI",
           "name": "time",
           "persistentUuid": "18e43298-ce29-47e0-bc7f-13fd204cf18e",
           "width": 0,
@@ -458,7 +495,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "UI",
           "name": "weight",
           "persistentUuid": "1b846e38-c718-4c35-993e-bab187684c23",
           "width": 0,
@@ -497,6 +534,36 @@
           "x": 0,
           "y": -1080,
           "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "background",
+          "name": "background1",
+          "persistentUuid": "8906e2db-d3fe-4651-922e-0efd43d03af5",
+          "width": 0,
+          "x": 0,
+          "y": 0,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "background",
+          "name": "background2",
+          "persistentUuid": "d72f5e23-a4ad-4fc9-bd2c-b39daad80332",
+          "width": 0,
+          "x": 3840,
+          "y": 0,
+          "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -891,7 +958,7 @@
           ]
         },
         {
-          "adaptCollisionMaskAutomatically": true,
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "platform",
           "type": "Sprite",
@@ -908,6 +975,55 @@
             }
           ],
           "animations": [
+            {
+              "name": "platform",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "platform",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "name": "NewSprite",
               "useMultipleDirections": false,
@@ -1166,7 +1282,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewSprite5",
+                      "image": "crumpled clothes ground.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1182,20 +1298,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 0,
-                            "y": 0
+                            "x": 191,
+                            "y": 270
                           },
                           {
-                            "x": 64,
-                            "y": 0
+                            "x": 804,
+                            "y": 270
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 804,
+                            "y": 675
                           },
                           {
-                            "x": 0,
-                            "y": 64
+                            "x": 191,
+                            "y": 675
                           }
                         ]
                       ]
@@ -1215,7 +1331,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewSprite6",
+                      "image": "crumpled clothes.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1231,20 +1347,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 0,
-                            "y": 0
+                            "x": 191,
+                            "y": 270
                           },
                           {
-                            "x": 64,
-                            "y": 0
+                            "x": 804,
+                            "y": 270
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 804,
+                            "y": 675
                           },
                           {
-                            "x": 0,
-                            "y": 64
+                            "x": 191,
+                            "y": 675
                           }
                         ]
                       ]
@@ -1449,6 +1565,136 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "background2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "airport(1).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 1080
+                          },
+                          {
+                            "x": 0,
+                            "y": 1080
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "background1",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "airport(1).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 1080
+                          },
+                          {
+                            "x": 0,
+                            "y": 1080
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1483,6 +1729,12 @@
           },
           {
             "objectName": "cover"
+          },
+          {
+            "objectName": "background2"
+          },
+          {
+            "objectName": "background1"
           }
         ]
       },
@@ -1757,9 +2009,30 @@
               "parameters": [
                 "",
                 "throwingObject",
-                "character.CenterX() - 32",
-                "character.CenterY() - 32",
+                "character.CenterX() - 96",
+                "character.CenterY() - 96",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "throwingObject",
+                "Resizable",
+                "192",
+                "192"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "throwingObject",
+                "=",
+                "Random(360)"
               ]
             },
             {
@@ -2390,9 +2663,164 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "background1",
+                "Tween",
+                "\"backgroundParallax1\"",
+                "-3840",
+                "\"linear\"",
+                "3840 * speed / 2720",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "background1",
+                "<=",
+                "-1900"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "background2",
+                "=",
+                "1920"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "background2",
+                "Tween",
+                "\"backgroundParallax2\"",
+                "-3840",
+                "\"linear\"",
+                "5760 * speed / 2720",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "background2",
+                "<=",
+                "-1900"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "background1",
+                "=",
+                "1920"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "background1",
+                "Tween",
+                "\"backgroundParallax1\"",
+                "-3840",
+                "\"linear\"",
+                "5760 * speed / 2720",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "background",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 8042920,
@@ -2538,7 +2966,19 @@
       "stopSoundsOnStartup": true,
       "title": "",
       "v": 209,
-      "uiSettings": {},
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.3645833333333333,
+        "windowMask": false
+      },
       "objectsGroups": [],
       "variables": [],
       "instances": [],
