@@ -314,6 +314,18 @@
           "name": "level",
           "type": "number",
           "value": 1
+        },
+        {
+          "folded": true,
+          "name": "speed",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "folded": true,
+          "name": "isDead",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -1540,6 +1552,25 @@
             },
             {
               "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "speed",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                "="
+              ]
+            },
+            {
+              "type": {
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
@@ -1596,12 +1627,11 @@
             },
             {
               "type": {
-                "value": "VarScene"
+                "value": "SceneVariableAsBoolean"
               },
               "parameters": [
-                "timer",
-                ">",
-                "0"
+                "isDead",
+                "False"
               ]
             }
           ],
@@ -1622,21 +1652,20 @@
           "conditions": [
             {
               "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                "False"
+              ]
+            },
+            {
+              "type": {
                 "value": "KeyPressed"
               },
               "parameters": [
                 "",
                 "Down"
-              ]
-            },
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "timer",
-                ">",
-                "0"
               ]
             },
             {
@@ -1702,6 +1731,15 @@
                 "timer",
                 ">",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                "False"
               ]
             },
             {
@@ -1794,7 +1832,7 @@
                 "\"movingFloorObstacle\"",
                 "-320",
                 "\"linear\"",
-                "2",
+                "speed",
                 ""
               ]
             },
@@ -1916,7 +1954,7 @@
                 "\"movingScale\"",
                 "-320",
                 "\"linear\"",
-                "2.5",
+                "speed * 1.25",
                 ""
               ]
             }
@@ -1957,6 +1995,15 @@
             },
             {
               "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                "True"
+              ]
+            },
+            {
+              "type": {
                 "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
               },
               "parameters": [
@@ -1965,7 +2012,7 @@
                 "\"movingCharacter\"",
                 "-2400",
                 "\"linear\"",
-                "2",
+                "speed",
                 ""
               ]
             }
@@ -2060,6 +2107,12 @@
                 "",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
@@ -2072,44 +2125,182 @@
                 "+",
                 "1"
               ]
-            },
-            {
-              "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "weight",
-                "=",
-                "2*Variable(score)"
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "timer",
-                "=",
-                "20"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "weight",
-                "Text",
-                "=",
-                "ToString(Variable(weight))"
-              ]
             }
           ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": []
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "level",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "weight",
+                    "=",
+                    "20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "timer",
+                    "=",
+                    "20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "speed",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "weight",
+                    "Text",
+                    "=",
+                    "ToString(Variable(weight))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "level",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "weight",
+                    "=",
+                    "40"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "timer",
+                    "=",
+                    "30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "speed",
+                    "=",
+                    "2 - (level - 2)/10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "weight",
+                    "Text",
+                    "=",
+                    "ToString(Variable(weight))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "level",
+                    ">",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "weight",
+                    "=",
+                    "Variable(score)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "timer",
+                    "=",
+                    "Variable(weight)/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "speed",
+                    "=",
+                    "2 - (level - 2)/10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "weight",
+                    "Text",
+                    "=",
+                    "ToString(Variable(weight))"
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -2118,12 +2309,29 @@
           "conditions": [
             {
               "type": {
-                "value": "VarScene"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "timer",
-                "<",
-                "0"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "timer",
+                    "<",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "isDead",
+                    "True"
+                  ]
+                }
               ]
             },
             {
@@ -2147,6 +2355,15 @@
                 "1",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"returnToMenu\""
+              ]
             }
           ]
         },
@@ -2155,12 +2372,13 @@
           "conditions": [
             {
               "type": {
-                "value": "VarScene"
+                "value": "CompareTimer"
               },
               "parameters": [
-                "timer",
-                "<",
-                "-1"
+                "",
+                "\"returnToMenu\"",
+                ">=",
+                "1"
               ]
             },
             {
