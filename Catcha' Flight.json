@@ -2827,18 +2827,6 @@
                     "=",
                     "ToString(Variable(weight))"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"background\"",
-                    "\"speed\"",
-                    "\"velocityX\"",
-                    "50"
-                  ]
                 }
               ]
             },
@@ -2897,18 +2885,6 @@
                     "=",
                     "ToString(Variable(weight))"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"background\"",
-                    "\"speed\"",
-                    "\"velocityX\"",
-                    "100"
-                  ]
                 }
               ]
             },
@@ -2966,18 +2942,6 @@
                     "Text",
                     "=",
                     "ToString(Variable(weight))"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"background\"",
-                    "\"speed\"",
-                    "\"velocityX\"",
-                    "200"
                   ]
                 }
               ]
@@ -3285,18 +3249,6 @@
           "visibility": true,
           "cameras": [],
           "effects": [
-            {
-              "effectType": "MotionBlur",
-              "name": "speed",
-              "doubleParameters": {
-                "kernelSize": 25,
-                "offset": 0,
-                "velocityX": 0,
-                "velocityY": 0
-              },
-              "stringParameters": {},
-              "booleanParameters": {}
-            },
             {
               "effectType": "Brightness",
               "name": "Effect2",
