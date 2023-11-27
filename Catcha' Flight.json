@@ -309,7 +309,7 @@
         "alwaysLoaded": false,
         "file": "obstacle.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"obstacle.png\",\"extension\":\".png\"}",
         "name": "obstacle.png",
         "smoothed": true,
         "userAdded": false
@@ -320,6 +320,42 @@
         "kind": "image",
         "metadata": "",
         "name": "obstacle2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "lampObstacle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "lampObstacle.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Obstacle3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/Obstacle3.png\"}",
+        "name": "Obstacle3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "vignette.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "vignette.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite10.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite10",
         "smoothed": true,
         "userAdded": true
       }
@@ -353,7 +389,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.46331118245140607,
+        "zoomFactor": 0.2550455473354394,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -547,13 +583,13 @@
           "customSize": true,
           "depth": 0,
           "height": 1080,
-          "layer": "cover",
+          "layer": "overlay",
           "name": "cover",
           "persistentUuid": "e3f601a9-11e7-4b65-9b83-d85724214467",
           "width": 1920,
           "x": 0,
           "y": -1080,
-          "zOrder": 17,
+          "zOrder": 100,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -584,6 +620,22 @@
           "x": 3840,
           "y": 0,
           "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 1088,
+          "layer": "overlay",
+          "name": "vignette",
+          "persistentUuid": "ae6eb58f-fa21-4049-b6e3-71188669da49",
+          "width": 1920,
+          "x": 0,
+          "y": 0,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1170,7 +1222,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Obstacle2",
+                      "image": "Obstacle3",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1190,16 +1242,16 @@
                             "y": 0
                           },
                           {
-                            "x": 32,
+                            "x": 33,
                             "y": 0
                           },
                           {
-                            "x": 32,
-                            "y": 17
+                            "x": 33,
+                            "y": 17.5
                           },
                           {
                             "x": 0,
-                            "y": 17
+                            "y": 17.5
                           }
                         ]
                       ]
@@ -1718,8 +1770,68 @@
           "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
           "animations": [
+            {
+              "name": "obstacle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "obstacle.png",
+                      "points": [
+                        {
+                          "name": "rotationPoint",
+                          "x": 82.5,
+                          "y": 601.5
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 564
+                          },
+                          {
+                            "x": 152,
+                            "y": 564
+                          },
+                          {
+                            "x": 152,
+                            "y": 636
+                          },
+                          {
+                            "x": 7,
+                            "y": 636
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "name": "",
               "useMultipleDirections": false,
@@ -1730,7 +1842,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "obstacle2.png",
+                      "image": "lampObstacle.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1746,20 +1858,158 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 6,
-                            "y": 557
+                            "x": 7,
+                            "y": 564
                           },
                           {
                             "x": 152,
-                            "y": 557
+                            "y": 564
                           },
                           {
                             "x": 152,
-                            "y": 631
+                            "y": 636
                           },
                           {
-                            "x": 6,
-                            "y": 631
+                            "x": 7,
+                            "y": 636
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "vignette",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [
+            {
+              "effectType": "Adjustment",
+              "name": "Effect",
+              "doubleParameters": {
+                "alpha": 0.5,
+                "blue": 0.6,
+                "brightness": 1,
+                "contrast": 1,
+                "gamma": 1,
+                "green": 1,
+                "red": 1,
+                "saturation": 2
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            }
+          ],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "vignette.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 0
+                          },
+                          {
+                            "x": 3840,
+                            "y": 2160
+                          },
+                          {
+                            "x": 0,
+                            "y": 2160
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "sky",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "NewSprite",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite10",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
                           }
                         ]
                       ]
@@ -1812,6 +2062,12 @@
           },
           {
             "objectName": "obstacleAppearance"
+          },
+          {
+            "objectName": "vignette"
+          },
+          {
+            "objectName": "sky"
           }
         ]
       },
@@ -2179,8 +2435,56 @@
               "parameters": [
                 "Obstacle",
                 "Tween",
-                "\"movingFloorObstacle\"",
+                "\"movingObstacle\"",
                 "-320",
+                "\"linear\"",
+                "speed",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "obstacleAppearance",
+                "2360",
+                "128",
+                "\"obstacleAesthetics\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+              },
+              "parameters": [
+                "obstacleAppearance",
+                "Animation",
+                "=",
+                "Variable(arial)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "obstacleAppearance",
+                "Resizable",
+                "160",
+                "680"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "obstacleAppearance",
+                "Tween",
+                "\"movingObstacleAppearance\"",
+                "-360",
                 "\"linear\"",
                 "speed",
                 ""
@@ -2523,6 +2827,18 @@
                     "=",
                     "ToString(Variable(weight))"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetLayerEffectParameter"
+                  },
+                  "parameters": [
+                    "",
+                    "\"background\"",
+                    "\"speed\"",
+                    "\"velocityX\"",
+                    "50"
+                  ]
                 }
               ]
             },
@@ -2581,6 +2897,18 @@
                     "=",
                     "ToString(Variable(weight))"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetLayerEffectParameter"
+                  },
+                  "parameters": [
+                    "",
+                    "\"background\"",
+                    "\"speed\"",
+                    "\"velocityX\"",
+                    "100"
+                  ]
                 }
               ]
             },
@@ -2638,6 +2966,18 @@
                     "Text",
                     "=",
                     "ToString(Variable(weight))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetLayerEffectParameter"
+                  },
+                  "parameters": [
+                    "",
+                    "\"background\"",
+                    "\"speed\"",
+                    "\"velocityX\"",
+                    "200"
                   ]
                 }
               ]
@@ -2863,6 +3203,70 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "Obstacle",
+                "<=",
+                "-300"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Obstacle",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "obstacleAppearance",
+                "<=",
+                "-300"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "obstacleAppearance",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -2883,26 +3287,12 @@
           "effects": [
             {
               "effectType": "MotionBlur",
-              "name": "Effect3",
+              "name": "speed",
               "doubleParameters": {
                 "kernelSize": 25,
                 "offset": 0,
-                "velocityX": 50,
+                "velocityX": 0,
                 "velocityY": 0
-              },
-              "stringParameters": {},
-              "booleanParameters": {}
-            },
-            {
-              "effectType": "RGBSplit",
-              "name": "Effect",
-              "doubleParameters": {
-                "blueX": 10,
-                "blueY": 1,
-                "greenX": 0,
-                "greenY": 0,
-                "redX": -10,
-                "redY": -1
               },
               "stringParameters": {},
               "booleanParameters": {}
@@ -2911,7 +3301,21 @@
               "effectType": "Brightness",
               "name": "Effect2",
               "doubleParameters": {
-                "brightness": 0.8
+                "brightness": 0.7
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "RGBSplit",
+              "name": "Effect",
+              "doubleParameters": {
+                "blueX": 5,
+                "blueY": 1,
+                "greenX": 0,
+                "greenY": 0,
+                "redX": -5,
+                "redY": -1
               },
               "stringParameters": {},
               "booleanParameters": {}
@@ -2932,23 +3336,7 @@
           "renderingType": "",
           "visibility": true,
           "cameras": [],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Light",
-              "doubleParameters": {
-                "elevation": 45,
-                "intensity": 1,
-                "rotation": 0
-              },
-              "stringParameters": {
-                "groundColor": "64;64;64",
-                "skyColor": "255;255;255",
-                "top": "Y-"
-              },
-              "booleanParameters": {}
-            }
-          ]
+          "effects": []
         },
         {
           "ambientLightColorB": 0,
@@ -2987,6 +3375,37 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
+          "name": "obstacleAesthetics",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "AdvancedBloom",
+              "name": "Effect",
+              "doubleParameters": {
+                "bloomScale": 1,
+                "blur": 10,
+                "brightness": 0.7,
+                "padding": 100,
+                "quality": 15,
+                "threshold": 0.5
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
           "name": "UI",
           "renderingType": "",
           "visibility": true,
@@ -3003,7 +3422,7 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
-          "name": "cover",
+          "name": "overlay",
           "renderingType": "",
           "visibility": true,
           "cameras": [],
