@@ -165,7 +165,7 @@
         "alwaysLoaded": false,
         "file": "assets/NewSprite8.png",
         "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite8.png\"}",
         "name": "NewSprite8",
         "smoothed": true,
         "userAdded": false
@@ -456,6 +456,60 @@
         "name": "airport(1)4.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "scale 1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "scale 1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "scale(1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "scale(1).png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "scale(1)2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "scale(1)2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "majestic scale(1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "majestic scale(1).png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "majestic scale.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "majestic scale.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "trophy(1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "trophy(1).png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -675,7 +729,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.24672586957406856,
+        "zoomFactor": 0.2725359896773006,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -811,7 +865,7 @@
           "name": "score",
           "persistentUuid": "4e0c4ea5-2f63-4e54-adc9-9c3069e6de89",
           "width": 0,
-          "x": 96,
+          "x": 288,
           "y": 96,
           "zOrder": 13,
           "numberProperties": [],
@@ -960,16 +1014,31 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 320,
+          "customSize": false,
+          "height": 0,
           "layer": "",
-          "name": "ground",
-          "persistentUuid": "f4ec428e-c5a2-4e07-9bc1-94f96ce7d6da",
-          "width": 1920,
-          "x": 0,
-          "y": 768,
+          "name": "scaleAppearance",
+          "persistentUuid": "2f3d49f4-2342-4654-8868-5433801238c2",
+          "width": 0,
+          "x": 2176,
+          "y": -280,
           "zOrder": 103,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 168,
+          "layer": "UI",
+          "name": "scoreIcon_",
+          "persistentUuid": "f89c370f-57b4-4fa0-bc47-70f7bcda86eb",
+          "width": 168,
+          "x": 96,
+          "y": 64,
+          "zOrder": 104,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1799,7 +1868,7 @@
                   "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
-                      "hasCustomCollisionMask": true,
+                      "hasCustomCollisionMask": false,
                       "image": "NewSprite8",
                       "points": [],
                       "originPoint": {
@@ -2334,6 +2403,167 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "scaleAppearance",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.5,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "majestic scale(1).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 304
+                          },
+                          {
+                            "x": 192,
+                            "y": 304
+                          },
+                          {
+                            "x": 192,
+                            "y": 1074
+                          },
+                          {
+                            "x": 0,
+                            "y": 1074
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "majestic scale.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 304
+                          },
+                          {
+                            "x": 192,
+                            "y": 304
+                          },
+                          {
+                            "x": 192,
+                            "y": 1074
+                          },
+                          {
+                            "x": 0,
+                            "y": 1074
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "scoreIcon_",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "trophy(1).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 227,
+                            "y": 161
+                          },
+                          {
+                            "x": 755,
+                            "y": 161
+                          },
+                          {
+                            "x": 755,
+                            "y": 840
+                          },
+                          {
+                            "x": 227,
+                            "y": 840
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -2383,6 +2613,12 @@
           },
           {
             "objectName": "jumpParticles"
+          },
+          {
+            "objectName": "scaleAppearance"
+          },
+          {
+            "objectName": "scoreIcon_"
           }
         ]
       },
@@ -2940,7 +3176,44 @@
                 "\"movingScale\"",
                 "-320",
                 "\"linear\"",
-                "speed * 1.25",
+                "3720 * speed/2720",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "scaleAppearance",
+                "3304",
+                "-280",
+                "\"scale\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "scaleAppearance",
+                "Resizable",
+                "192",
+                "1080"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "scaleAppearance",
+                "Tween",
+                "\"movingMagesticScale\"",
+                "-320",
+                "\"linear\"",
+                "3720 * speed/2720",
                 ""
               ]
             }
@@ -3417,6 +3690,70 @@
                 "value": "PosX"
               },
               "parameters": [
+                "scaleAppearance",
+                "<=",
+                "-300"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "scaleAppearance",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "scale",
+                "<=",
+                "-300"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "scale",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
                 "obstacleAppearance",
                 "<=",
                 "-300"
@@ -3732,6 +4069,37 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
+          "name": "scale",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "AdvancedBloom",
+              "name": "Effect",
+              "doubleParameters": {
+                "bloomScale": 0.5,
+                "blur": 10,
+                "brightness": 0.7,
+                "padding": 100,
+                "quality": 15,
+                "threshold": 0.1
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
           "name": "obstacleAesthetics",
           "renderingType": "",
           "visibility": true,
@@ -3905,7 +4273,36 @@
           ]
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     },
     {
       "b": 209,
@@ -4128,7 +4525,36 @@
           ]
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     }
   ],
   "externalEvents": [],
