@@ -358,6 +358,59 @@
         "name": "NewSprite10",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/LightGlow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LightGlow.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/GDevelop/c17e2d500015e598624b763f4942b26e3aac96efca094cd20257a61e15b27fcb_LightGlow.png",
+          "name": "LightGlow.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Sparks.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Sparks.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/1be94c18bc3de19355d118a226f03e10a4f18307277f00f3559d265a9b27bbef_Sparks.png",
+          "name": "Sparks.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "guy surfing.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "guy surfing.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "guy surf.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "guy surf.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite11.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite11.png\"}",
+        "name": "NewSprite11",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -389,7 +442,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.2550455473354394,
+        "zoomFactor": 0.39251611754883076,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -712,7 +765,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -748,7 +801,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -784,7 +837,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -820,7 +873,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -856,7 +909,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -892,7 +945,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -928,7 +981,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -964,7 +1017,7 @@
                             "y": 19
                           },
                           {
-                            "x": 438,
+                            "x": 442,
                             "y": 440
                           },
                           {
@@ -989,7 +1042,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "character",
+                      "image": "guy surf.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1005,20 +1058,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 43,
-                            "y": 22
+                            "x": 307,
+                            "y": 17.5
                           },
                           {
-                            "x": 521,
-                            "y": 22
+                            "x": 442,
+                            "y": 19
                           },
                           {
-                            "x": 521,
+                            "x": 442,
                             "y": 440
                           },
                           {
-                            "x": 274,
-                            "y": 430.5
+                            "x": 302,
+                            "y": 440
                           }
                         ]
                       ]
@@ -1173,7 +1226,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewSprite7",
+                      "image": "NewSprite11",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1186,26 +1239,7 @@
                         "x": 0,
                         "y": 0
                       },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 61
-                          },
-                          {
-                            "x": 32,
-                            "y": 61
-                          },
-                          {
-                            "x": 32,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
-                          }
-                        ]
-                      ]
+                      "customCollisionMask": []
                     }
                   ]
                 }
@@ -2019,6 +2053,51 @@
               ]
             }
           ]
+        },
+        {
+          "additive": false,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": false,
+          "emitterAngleA": 0,
+          "emitterAngleB": 160,
+          "emitterForceMax": 250,
+          "emitterForceMin": 250,
+          "flow": 500,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 300,
+          "name": "jumpParticles",
+          "particleAlpha1": 204,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 117,
+          "particleBlue2": 180,
+          "particleGravityX": 0,
+          "particleGravityY": 10,
+          "particleGreen1": 117,
+          "particleGreen2": 180,
+          "particleLifeTimeMax": 0.5,
+          "particleLifeTimeMin": 0.5,
+          "particleRed1": 117,
+          "particleRed2": 180,
+          "particleSize1": 100,
+          "particleSize2": 100,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 15,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 50,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 3,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -2068,6 +2147,9 @@
           },
           {
             "objectName": "sky"
+          },
+          {
+            "objectName": "jumpParticles"
           }
         ]
       },
@@ -3231,6 +3313,79 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "character",
+                "platform",
+                "platform",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+              },
+              "parameters": [
+                "character",
+                "Animation",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "character",
+                "platform",
+                "platform",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+              },
+              "parameters": [
+                "character",
+                "Animation",
+                "=",
+                "1"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -3373,7 +3528,7 @@
           "camera3DNearPlaneDistance": 3,
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
+          "isLocked": true,
           "name": "overlay",
           "renderingType": "",
           "visibility": true,
