@@ -729,7 +729,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.2725359896773006,
+        "zoomFactor": 0.5290357402156988,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -2564,6 +2564,48 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "fps",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "obstacle_count",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -2619,6 +2661,12 @@
           },
           {
             "objectName": "scoreIcon_"
+          },
+          {
+            "objectName": "fps"
+          },
+          {
+            "objectName": "obstacle_count"
           }
         ]
       },
@@ -3660,14 +3708,8 @@
               "parameters": [
                 "Obstacle",
                 "<=",
-                "-300"
+                "-200"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -3692,14 +3734,8 @@
               "parameters": [
                 "scaleAppearance",
                 "<=",
-                "-300"
+                "-200"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -3724,14 +3760,8 @@
               "parameters": [
                 "scale",
                 "<=",
-                "-300"
+                "-200"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -3756,14 +3786,8 @@
               "parameters": [
                 "obstacleAppearance",
                 "<=",
-                "-300"
+                "-200"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -4082,7 +4106,7 @@
                 "blur": 10,
                 "brightness": 0.7,
                 "padding": 100,
-                "quality": 15,
+                "quality": 3,
                 "threshold": 0.1
               },
               "stringParameters": {},
@@ -4113,7 +4137,7 @@
                 "blur": 10,
                 "brightness": 0.7,
                 "padding": 100,
-                "quality": 15,
+                "quality": 7,
                 "threshold": 0.5
               },
               "stringParameters": {},
