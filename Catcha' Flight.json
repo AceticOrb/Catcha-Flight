@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "startup",
   "gdVersion": {
     "build": 99,
     "major": 4,
@@ -583,6 +583,15 @@
         "kind": "image",
         "metadata": "",
         "name": "pattern.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "rodzilla.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "rodzilla.png",
         "smoothed": true,
         "userAdded": true
       }
@@ -1960,7 +1969,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.5653158055126491,
+        "zoomFactor": 0.24672586957407058,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -1999,6 +2008,12 @@
           "name": "speed",
           "type": "number",
           "value": 2
+        },
+        {
+          "folded": true,
+          "name": "outsideStuff",
+          "type": "number",
+          "value": 0
         },
         {
           "folded": true,
@@ -2317,7 +2332,7 @@
           "initialVariables": []
         },
         {
-          "angle": 0,
+          "angle": 25,
           "customSize": true,
           "depth": 0,
           "height": 192,
@@ -2344,6 +2359,22 @@
           "x": 832,
           "y": 320,
           "zOrder": 108,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 576,
+          "layer": "backbackground",
+          "name": "rodzilla",
+          "persistentUuid": "48c08526-0d1e-4977-8b62-247c9af87e20",
+          "width": 576,
+          "x": 1344,
+          "y": 700,
+          "zOrder": 109,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3159,15 +3190,80 @@
               "type": "Tween::TweenBehavior"
             }
           ],
-          "string": "[SPACE] TO THROW CLOTHES BEFORE THE TIMER REACHES 0\n\n[UP] TO JUMP\n[DOWN] TO DIVE",
+          "string": "[SPACE] TO THROW CLOTHES BEFORE   THE TIMER RUNS OUT\n\nTHE WEIGHT SHOWS HOW MUCH YOU HAVE TO THROW LEFT\n\n[UP] TO JUMP\n[DOWN] TO DIVE",
           "font": "Oswald-Light.ttf",
           "textAlignment": "center",
-          "characterSize": 70,
+          "characterSize": 60,
           "color": {
             "b": 255,
             "g": 255,
             "r": 255
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "rodzilla",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "rodzilla.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 119
+                          },
+                          {
+                            "x": 1000,
+                            "y": 119
+                          },
+                          {
+                            "x": 1000,
+                            "y": 883
+                          },
+                          {
+                            "x": 0,
+                            "y": 883
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -3214,6 +3310,9 @@
           },
           {
             "objectName": "weightIcon"
+          },
+          {
+            "objectName": "rodzilla"
           }
         ]
       },
@@ -3349,6 +3448,15 @@
               "parameters": [
                 "",
                 "\"oneSecondTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"fiveSecondTimer\""
               ]
             },
             {
@@ -4716,6 +4824,124 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"fiveSecondTimer\"",
+                ">=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "outsideStuff",
+                "=",
+                "RandomInRange(1,10)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"fiveSecondTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "outsideStuff",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "rodzilla",
+                "Tween",
+                "\"rodzillaMoveUp\"",
+                "256",
+                "\"linear\"",
+                "5",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "outsideStuff",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "rodzilla",
+                "Tween",
+                "\"rodzillaMoveDown\"",
+                "700",
+                "\"linear\"",
+                "5",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -4729,6 +4955,38 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
+          "name": "backbackground",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": true,
           "name": "background",
           "renderingType": "",
           "visibility": true,
@@ -5946,6 +6204,15 @@
               "parameters": [
                 "",
                 "\"peepeepoopoo\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedWindow::SetFullScreenable"
+              },
+              "parameters": [
+                "yes",
+                "yes"
               ]
             }
           ]
