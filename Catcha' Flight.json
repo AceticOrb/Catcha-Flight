@@ -603,6 +603,16 @@
         "name": "meteor.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Catch A Flight.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Catch A Flight.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -6244,7 +6254,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.29879853636069037,
+        "zoomFactor": 0.49138775453293526,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -6300,7 +6310,7 @@
               "type": "Tween::TweenBehavior"
             }
           ],
-          "string": "SISYPHUS WAS TO ENDLESSLY ROLL A BOULDER TO THE TOP OF A HILL, JUST FOR IT TO FALL BACK DOWN\n\nVICTORY BARELY ESCAPING HIS GRASP EACH TIME.\n\n\n(context in the extended game)",
+          "string": "Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, praesertim mutationis sit.\n\n\n(no context)",
           "font": "Oswald-Light.ttf",
           "textAlignment": "center",
           "characterSize": 75,
