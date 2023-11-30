@@ -594,6 +594,15 @@
         "name": "rodzilla.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "meteor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "meteor.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1969,7 +1978,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.24672586957407058,
+        "zoomFactor": 0.713037763069063,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -2357,7 +2366,7 @@
           "persistentUuid": "954ef91e-e39d-4f8d-880c-e238d5541e46",
           "width": 896,
           "x": 832,
-          "y": 320,
+          "y": 270,
           "zOrder": 108,
           "numberProperties": [],
           "stringProperties": [],
@@ -2375,6 +2384,22 @@
           "x": 1344,
           "y": 700,
           "zOrder": 109,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 300,
+          "layer": "backbackground",
+          "name": "meteor",
+          "persistentUuid": "1cea8e38-5ea2-4362-8525-253b9a4401eb",
+          "width": 300,
+          "x": 640,
+          "y": 768,
+          "zOrder": 110,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3190,10 +3215,10 @@
               "type": "Tween::TweenBehavior"
             }
           ],
-          "string": "[SPACE] TO THROW CLOTHES BEFORE   THE TIMER RUNS OUT\n\nTHE WEIGHT SHOWS HOW MUCH YOU HAVE TO THROW LEFT\n\n[UP] TO JUMP\n[DOWN] TO DIVE",
+          "string": "[SPACE] TO THROW CLOTHES BEFORE THE TIMER   RUNS OUT\n\nTHE WEIGHT SHOWS HOW MUCH YOU HAVE TO THROW LEFT\n\n[UP] TO JUMP\n[DOWN] TO DIVE\n\nDODGE YOUR STUFF!",
           "font": "Oswald-Light.ttf",
           "textAlignment": "center",
-          "characterSize": 60,
+          "characterSize": 50,
           "color": {
             "b": 255,
             "g": 255,
@@ -3264,6 +3289,71 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "meteor",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "meteor.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 124
+                          },
+                          {
+                            "x": 910,
+                            "y": 124
+                          },
+                          {
+                            "x": 910,
+                            "y": 878
+                          },
+                          {
+                            "x": 91,
+                            "y": 878
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -3313,6 +3403,9 @@
           },
           {
             "objectName": "rodzilla"
+          },
+          {
+            "objectName": "meteor"
           }
         ]
       },
@@ -4942,6 +5035,53 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "outsideStuff",
+                "=",
+                "9"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "meteor",
+                "=",
+                "20"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "meteor",
+                "Tween",
+                "\"meteorFall\"",
+                "768",
+                "\"linear\"",
+                "5",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -4959,23 +5099,7 @@
           "renderingType": "",
           "visibility": true,
           "cameras": [],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Light",
-              "doubleParameters": {
-                "elevation": 45,
-                "intensity": 1,
-                "rotation": 0
-              },
-              "stringParameters": {
-                "groundColor": "64;64;64",
-                "skyColor": "255;255;255",
-                "top": "Y-"
-              },
-              "booleanParameters": {}
-            }
-          ]
+          "effects": []
         },
         {
           "ambientLightColorB": 200,
@@ -6075,12 +6199,24 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior"
+        },
+        {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         },
         {
           "name": "Tween",
