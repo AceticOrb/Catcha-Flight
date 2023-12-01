@@ -25,7 +25,7 @@
     "author": "",
     "windowWidth": 1920,
     "windowHeight": 1080,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "C:\\Users\\Arthu\\Desktop\\Catch A Flight",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -679,6 +679,56 @@
         "kind": "audio",
         "metadata": "",
         "name": "meteor (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "Late (enhanced).wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Late (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "shit (enhanced).wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "shit (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "lamp (enhanced).wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "lamp (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "05.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "05.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "07.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "07.mp3",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -1973,6 +2023,27 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "subtitles",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Tourist:",
+      "font": "Oswald-Light.ttf",
+      "textAlignment": "left",
+      "characterSize": 50,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2001,6 +2072,9 @@
       },
       {
         "objectName": "score"
+      },
+      {
+        "objectName": "subtitles"
       },
       {
         "objectName": "platform"
@@ -2058,7 +2132,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.37971210019480545,
+        "zoomFactor": 0.49508400737490477,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -2480,6 +2554,21 @@
           "x": 640,
           "y": 768,
           "zOrder": 110,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "subtitles",
+          "persistentUuid": "dc2ba142-0b98-4cfb-a1c4-cd3e808c183f",
+          "width": 0,
+          "x": 960,
+          "y": 928,
+          "zOrder": 111,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3676,8 +3765,28 @@
                 "",
                 "better airport sounds.wav",
                 "",
-                "75",
+                "100",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "subtitles",
+                "Text",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PreloadSound"
+              },
+              "parameters": [
+                "",
+                "05.mp3"
               ]
             }
           ]
@@ -4416,6 +4525,18 @@
                 "+",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "05.mp3",
+                "",
+                "100",
+                "1"
+              ]
             }
           ],
           "events": [
@@ -4532,6 +4653,38 @@
                     "=",
                     "ToString(Variable(weight)) + \" lbs.\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "lamp (enhanced).wav",
+                    "",
+                    "75",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "subtitles",
+                    "Text",
+                    "=",
+                    "\"Tourist: (Rants about lamps)\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"subtitleTimer\""
+                  ]
                 }
               ]
             },
@@ -4589,6 +4742,38 @@
                     "Text",
                     "=",
                     "ToString(Variable(weight)) + \" lbs.\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"subtitleTimer\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "subtitles",
+                    "Text",
+                    "=",
+                    "\"Tourist: I really gotta take a shit right now...\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "shit (enhanced).wav",
+                    "",
+                    "60",
+                    "1"
                   ]
                 }
               ]
@@ -5063,7 +5248,7 @@
               "parameters": [
                 "outsideStuff",
                 "=",
-                "RandomInRange(1,10)"
+                "RandomInRange(1,15)"
               ]
             },
             {
@@ -5122,6 +5307,26 @@
                 "",
                 "50",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "subtitles",
+                "Text",
+                "=",
+                "\"Tourist: Wow, look at the SCALES on that monster!\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"subtitleTimer\""
               ]
             }
           ]
@@ -5220,6 +5425,26 @@
                 "50",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "subtitles",
+                "Text",
+                "=",
+                "\"Tourist: That meteor is off the SCALES, like Diwali fireworks in the night sky!\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"subtitleTimer\""
+              ]
             }
           ]
         },
@@ -5244,6 +5469,38 @@
                 "",
                 "\"announcementTimer\""
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "subtitles",
+                "Text",
+                "=",
+                "\"Tourist: Oh no, I'm late!\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"subtitleTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Late (enhanced).wav",
+                "",
+                "75",
+                "1"
+              ]
             }
           ]
         },
@@ -5258,7 +5515,7 @@
                 "",
                 "\"announcementTimer\"",
                 ">=",
-                "4"
+                "2"
               ]
             },
             {
@@ -5335,7 +5592,7 @@
                 "",
                 "0",
                 "+",
-                "TimeDelta()*10"
+                "TimeDelta()*25"
               ]
             }
           ]
@@ -5429,6 +5686,57 @@
               "parameters": [
                 "",
                 "\"musicTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"subtitleTimer\"",
+                ">=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "subtitles",
+                "Text",
+                "=",
+                "\"\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "subtitles",
+                "=",
+                "960 - subtitles.Width()/2"
               ]
             }
           ]
@@ -5957,6 +6265,15 @@
                 "m",
                 "\"menuDuration\""
               ]
+            },
+            {
+              "type": {
+                "value": "PreloadSound"
+              },
+              "parameters": [
+                "",
+                "07.mp3"
+              ]
             }
           ]
         },
@@ -6096,6 +6413,18 @@
                 "",
                 "\"playTimer\""
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "07.mp3",
+                "",
+                "100",
+                "1"
+              ]
             }
           ]
         },
@@ -6140,6 +6469,18 @@
               "parameters": [
                 "",
                 "\"creditsTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "07.mp3",
+                "",
+                "100",
+                "1"
               ]
             }
           ]
@@ -6408,7 +6749,7 @@
                 "",
                 "0",
                 "+",
-                "TimeDelta()*10"
+                "TimeDelta()*25"
               ]
             }
           ]
@@ -6816,7 +7157,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.49138775453293526,
+        "zoomFactor": 0.35269049347712256,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -6872,7 +7213,7 @@
               "type": "Tween::TweenBehavior"
             }
           ],
-          "string": "Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, praesertim mutationis sit.\n\n\n(no context)",
+          "string": "PLUG IN YOUR DEVICE FOR THE BEST PERFORMANCE.\n\nENJOY THE GAME!\n\n- A BUNCH OF RETARD HIGH SCHOOL STUDENTS",
           "font": "Oswald-Light.ttf",
           "textAlignment": "center",
           "characterSize": 75,
@@ -6930,6 +7271,14 @@
               "parameters": [
                 "",
                 "Catch A Flight.mp3"
+              ]
+            },
+            {
+              "type": {
+                "value": "CacheSouris"
+              },
+              "parameters": [
+                ""
               ]
             }
           ]
@@ -7181,7 +7530,7 @@
           "persistentUuid": "de64537e-3899-4729-b568-a0031c5f9ee7",
           "width": 1344,
           "x": 544,
-          "y": 512,
+          "y": 449,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -7253,7 +7602,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Game Design/Development, Composition, Graphics: Arthur Tran (AceticOrb)\n\nVoice Acting: Ahmad Abrar, Majd Abdalla, Iven Xiao, Mohummad Iqrit",
+          "string": "Game Design/Development, Composition, Graphics: Arthur Tran (AceticOrb)\n\nSFX: Freesound.org\n\nVoice Acting: Ahmad Abrar, Majd Abdalla, Iven Xiao, Mohummad Iqrit",
           "font": "Oswald-Light.ttf",
           "textAlignment": "left",
           "characterSize": 75,
@@ -7500,6 +7849,18 @@
                 "",
                 "\"menuTimer\""
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "07.mp3",
+                "",
+                "100",
+                "1"
+              ]
             }
           ]
         },
@@ -7527,6 +7888,188 @@
                 "",
                 "\"menu\"",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PreloadSound"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\"",
+                ">=",
+                "42.65"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "StopSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "50",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"menuTimer\"",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "-",
+                "TimeDelta()*100"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                "<",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"menuTimer\"",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "+",
+                "TimeDelta()*25"
               ]
             }
           ]
