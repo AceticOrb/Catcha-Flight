@@ -613,6 +613,76 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": true
+      },
+      {
+        "file": "708083__whi1ter1ce__zipping-bag.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "708083__whi1ter1ce__zipping-bag.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "388019__saturdaysoundguy__celery-snap.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "388019__saturdaysoundguy__celery-snap.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "celery snap.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "celery snap.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "airport sounds.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "airport sounds.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "better airport sounds.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "better airport sounds.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "monster (enhanced).wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "monster (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "meteor (enhanced).wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "meteor (enhanced).wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -1988,7 +2058,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.713037763069063,
+        "zoomFactor": 0.37971210019480545,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -3597,6 +3667,18 @@
                 "\"brightness\"",
                 "0.5"
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "better airport sounds.wav",
+                "",
+                "75",
+                "1"
+              ]
             }
           ]
         },
@@ -3997,6 +4079,18 @@
                 "doneTutorial",
                 "True"
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "708083__whi1ter1ce__zipping-bag.wav",
+                "",
+                "50",
+                "1.75"
+              ]
             }
           ]
         },
@@ -4190,6 +4284,18 @@
                 "prevScore",
                 "=",
                 "Variable(score)"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "celery snap.wav",
+                "",
+                "75",
+                "0.8"
               ]
             }
           ]
@@ -5005,6 +5111,18 @@
                 "5",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "monster (enhanced).wav",
+                "",
+                "50",
+                "1"
+              ]
             }
           ]
         },
@@ -5089,6 +5207,228 @@
                 "\"linear\"",
                 "5",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "meteor (enhanced).wav",
+                "",
+                "50",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"announcementTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"announcementTimer\"",
+                ">=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PreloadSound"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                "<",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "+",
+                "TimeDelta()*10"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isDead",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "-",
+                "TimeDelta()*100"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\"",
+                ">=",
+                "42.65"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "StopSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "50",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
               ]
             }
           ]
@@ -5608,6 +5948,15 @@
                 "2",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "m",
+                "\"menuDuration\""
+              ]
             }
           ]
         },
@@ -5847,6 +6196,219 @@
                 "",
                 "\"credits\"",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PreloadSound"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\"",
+                ">=",
+                "42.65"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "StopSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3",
+                "0",
+                "",
+                "50",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"musicTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"playTimer\"",
+                    ">",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"creditsTimer\"",
+                    ">",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "-",
+                "TimeDelta()*100"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SoundCanalVolume"
+              },
+              "parameters": [
+                "",
+                "0",
+                "<",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"playTimer\"",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"creditsTimer\"",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVolumeSoundCanal"
+              },
+              "parameters": [
+                "",
+                "0",
+                "+",
+                "TimeDelta()*10"
               ]
             }
           ]
@@ -6360,6 +6922,15 @@
                 "yes",
                 "yes"
               ]
+            },
+            {
+              "type": {
+                "value": "PreloadMusic"
+              },
+              "parameters": [
+                "",
+                "Catch A Flight.mp3"
+              ]
             }
           ]
         },
@@ -6609,8 +7180,8 @@
           "name": "creditsText",
           "persistentUuid": "de64537e-3899-4729-b568-a0031c5f9ee7",
           "width": 1344,
-          "x": 576,
-          "y": 513,
+          "x": 544,
+          "y": 512,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -6682,7 +7253,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Game Design/Development: Arthur Tran (AceticOrb)\nGraphics Design: Arthur Tran (probably AceticOrb)\nComposed by: Arthur Tran (i think he might be AceticOrb)\n\nVoice Acting: Ahmad Abrar",
+          "string": "Game Design/Development, Composition, Graphics: Arthur Tran (AceticOrb)\n\nVoice Acting: Ahmad Abrar, Majd Abdalla, Iven Xiao, Mohummad Iqrit",
           "font": "Oswald-Light.ttf",
           "textAlignment": "left",
           "characterSize": 75,
